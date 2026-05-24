@@ -28,7 +28,9 @@ impl HistoryCell for UpdateAvailableHistoryCell {
         } else {
             line![
                 "See ",
-                "https://github.com/openai/codex".cyan().underlined(),
+                "https://github.com/Franzferdinan51/DuckHive"
+                    .cyan()
+                    .underlined(),
                 " for installation options."
             ]
         };
@@ -43,7 +45,7 @@ impl HistoryCell for UpdateAvailableHistoryCell {
             update_instruction,
             "",
             "See full release notes:",
-            "https://github.com/openai/codex/releases/latest"
+            "https://github.com/Franzferdinan51/DuckHive/releases/latest"
                 .cyan()
                 .underlined(),
         ];
@@ -59,7 +61,7 @@ impl HistoryCell for UpdateAvailableHistoryCell {
         let update_instruction = if let Some(update_action) = self.update_action {
             format!("Run {} to update.", update_action.command_str())
         } else {
-            "See https://github.com/openai/codex for installation options.".to_string()
+            "See https://github.com/Franzferdinan51/DuckHive for installation options.".to_string()
         };
         vec![
             Line::from("Update available!"),

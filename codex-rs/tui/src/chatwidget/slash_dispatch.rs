@@ -437,6 +437,9 @@ impl ChatWidget {
                     );
                 }
             }
+            SlashCommand::Provider => {
+                self.add_provider_output();
+            }
             SlashCommand::TestApproval => {
                 use std::collections::HashMap;
 
@@ -981,7 +984,8 @@ impl ChatWidget {
             | SlashCommand::Title
             | SlashCommand::Statusline
             | SlashCommand::Theme
-            | SlashCommand::Pets => QueueDrain::Stop,
+            | SlashCommand::Pets
+            | SlashCommand::Provider => QueueDrain::Stop,
         }
     }
 

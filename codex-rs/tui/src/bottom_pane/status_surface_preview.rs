@@ -38,7 +38,7 @@ pub(crate) enum StatusSurfacePreviewItem {
 impl StatusSurfacePreviewItem {
     fn placeholder(self) -> &'static str {
         match self {
-            StatusSurfacePreviewItem::AppName => "codex",
+            StatusSurfacePreviewItem::AppName => "duckhive",
             StatusSurfacePreviewItem::ProjectName => "my-project",
             StatusSurfacePreviewItem::ProjectRoot => "my-project",
             StatusSurfacePreviewItem::CurrentDir => "~/my-project/subdir",
@@ -61,8 +61,8 @@ impl StatusSurfacePreviewItem {
             StatusSurfacePreviewItem::SessionId => "550e8400-e29b-41d4",
             StatusSurfacePreviewItem::FastMode => "Fast on",
             StatusSurfacePreviewItem::RawOutput => "raw output",
-            StatusSurfacePreviewItem::Model => "gpt-5.2-codex",
-            StatusSurfacePreviewItem::ModelWithReasoning => "gpt-5.2-codex medium",
+            StatusSurfacePreviewItem::Model => "gpt-5.2",
+            StatusSurfacePreviewItem::ModelWithReasoning => "gpt-5.2 medium",
             StatusSurfacePreviewItem::TaskProgress => "Tasks 0/0",
         }
     }

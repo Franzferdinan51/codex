@@ -18,8 +18,8 @@ pub(super) struct BuiltinPet {
 pub(super) const BUILTIN_PETS: &[BuiltinPet] = &[
     BuiltinPet {
         id: "codex",
-        display_name: "Codex",
-        description: "The original Codex companion",
+        display_name: "DuckHive",
+        description: "The original DuckHive companion",
         spritesheet_file: "codex-spritesheet-v4.webp",
     },
     BuiltinPet {

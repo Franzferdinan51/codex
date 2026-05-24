@@ -9,13 +9,12 @@ const ANNOUNCEMENT_TIP_URL: &str =
 const IS_MACOS: bool = cfg!(target_os = "macos");
 const IS_WINDOWS: bool = cfg!(target_os = "windows");
 
-const APP_TOOLTIP: &str = "Try the **Codex App**. Run 'codex app' or visit https://chatgpt.com/codex?app-landing-page=true";
+const APP_TOOLTIP: &str = "Try **DuckHive** with multiple providers. Run ‘/provider’ or visit https://github.com/Franzferdinan51/DuckHive";
 const FAST_TOOLTIP: &str =
     "*New* Use **/fast** to enable our fastest inference with increased plan usage.";
-const OTHER_TOOLTIP: &str = "*New* Build faster with the **Codex App**. Run 'codex app' or visit https://chatgpt.com/codex?app-landing-page=true";
-const OTHER_TOOLTIP_NON_MAC: &str = "*New* Build faster with Codex.";
-const FREE_GO_TOOLTIP: &str =
-    "*New* For a limited time, Codex is included in your plan for free – let’s build together.";
+const OTHER_TOOLTIP: &str = "*New* Build faster with **DuckHive** multi-provider support. Run ‘/provider’ or visit https://github.com/Franzferdinan51/DuckHive";
+const OTHER_TOOLTIP_NON_MAC: &str = "*New* Build faster with DuckHive.";
+const FREE_GO_TOOLTIP: &str = "*New* For a limited time, DuckHive is included in your plan for free \u{2013} let\u{2019}s build together.";
 
 const RAW_TOOLTIPS: &str = include_str!("../tooltips.txt");
 
