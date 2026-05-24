@@ -1,7 +1,7 @@
 {
   "name": "duckhive-codex",
   "version": "0.0.0-dev",
-  "description": "DuckHive Codex - Custom Codex fork with multi-provider support.",
+  "description": "DuckHive - Custom Codex fork with multi-provider support.",
   "license": "Apache-2.0",
   "bin": {
     "duckhive-codex": "bin/codex.js"

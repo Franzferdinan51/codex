@@ -43,6 +43,7 @@ codex-memories-write = { workspace = true }
 codex-mcp = { workspace = true }
 codex-mcp-server = { workspace = true }
 codex-model-provider = { workspace = true }
+codex-model-provider-info = { workspace = true }
 codex-models-manager = { workspace = true }
 codex-plugin = { workspace = true }
 codex-protocol = { workspace = true }
@@ -57,7 +58,9 @@ codex-tui = { workspace = true }
 codex-utils-absolute-path = { workspace = true }
 codex-utils-path = { workspace = true }
 crossterm = { workspace = true }
+dialoguer = { workspace = true }
 http = { workspace = true }
+reqwest = { workspace = true, features = ["json"] }
 libc = { workspace = true }
 owo-colors = { workspace = true }
 regex-lite = { workspace = true }

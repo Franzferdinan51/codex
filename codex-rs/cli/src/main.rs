@@ -49,6 +49,7 @@ mod doctor;
 mod marketplace_cmd;
 mod mcp_cmd;
 mod plugin_cmd;
+mod provider_cmd;
 mod remote_control_cmd;
 mod state_db_recovery;
 #[cfg(not(windows))]
@@ -57,6 +58,7 @@ mod wsl_paths;
 use crate::mcp_cmd::McpCli;
 use crate::plugin_cmd::PluginCli;
 use crate::plugin_cmd::PluginSubcommand;
+use crate::provider_cmd::ProviderCommand;
 use crate::remote_control_cmd::RemoteControlCommand;
 use doctor::DoctorCommand;
 use state_db_recovery as local_state_db;
@@ -179,6 +181,9 @@ enum Subcommand {
     /// [EXPERIMENTAL] Browse tasks from Codex Cloud and apply changes locally.
     #[clap(name = "cloud", alias = "cloud-tasks")]
     Cloud(CloudTasksCli),
+
+    /// Manage custom model providers.
+    Provider(ProviderCommand),
 
     /// Internal: run the responses API proxy.
     #[clap(hide = true)]
@@ -1240,6 +1245,14 @@ async fn cli_main(arg0_paths: Arg0DispatchPaths) -> anyhow::Result<()> {
             codex_cloud_tasks::run_main(cloud_cli, arg0_paths.codex_linux_sandbox_exe.clone())
                 .await?;
         }
+        Some(Subcommand::Provider(provider_cli)) => {
+            reject_remote_mode_for_subcommand(
+                root_remote.as_deref(),
+                root_remote_auth_token_env.as_deref(),
+                "provider",
+            )?;
+            provider_cli.run().await?;
+        }
         Some(Subcommand::Sandbox(mut sandbox_cli)) => {
             reject_remote_mode_for_subcommand(
                 root_remote.as_deref(),
@@ -1865,6 +1878,7 @@ fn unsupported_subcommand_name_for_strict_config(
         Some(Subcommand::Apply(_)) => Some("apply"),
         Some(Subcommand::ResponsesApiProxy(_)) => Some("responses-api-proxy"),
         Some(Subcommand::StdioToUds(_)) => Some("stdio-to-uds"),
+        Some(Subcommand::Provider(_)) => Some("provider"),
         Some(Subcommand::Features(_)) => Some("features"),
     }
 }

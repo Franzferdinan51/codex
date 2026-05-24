@@ -158,10 +158,6 @@ impl SlashCommand {
                 | SlashCommand::Mcp
                 | SlashCommand::Raw
                 | SlashCommand::Pets
-                | SlashCommand::Side
-                | SlashCommand::Btw
-                | SlashCommand::Resume
-                | SlashCommand::SandboxReadRoot
         )
     }
 
@@ -199,12 +195,12 @@ impl SlashCommand {
             | SlashCommand::Plan
             | SlashCommand::Clear
             | SlashCommand::Logout
-            | SlashCommand::Provider
             | SlashCommand::MemoryDrop
             | SlashCommand::MemoryUpdate => false,
             SlashCommand::Diff
             | SlashCommand::Copy
             | SlashCommand::Raw
+            | SlashCommand::Provider
             | SlashCommand::Rename
             | SlashCommand::Mention
             | SlashCommand::Skills

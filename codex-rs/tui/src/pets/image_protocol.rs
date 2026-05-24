@@ -64,7 +64,7 @@ impl PetImageUnsupportedReason {
     fn message(self) -> &'static str {
         match self {
             Self::Tmux => {
-                "Pets are disabled in tmux. Terminal images don’t stay pane-local in tmux and can corrupt scrollback or move between panes. Run Codex outside tmux to use pets."
+                "Pets are disabled in tmux. Terminal images don’t stay pane-local in tmux and can corrupt scrollback or move between panes. Run DuckHive outside tmux to use pets."
             }
             Self::Zellij => {
                 "Pets are disabled in Zellij. Terminal images don’t stay reliably pane-local in Zellij. Run Codex outside Zellij to use pets."
