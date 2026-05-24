@@ -133,7 +133,7 @@ impl SlashCommand {
             SlashCommand::Apps => "manage apps",
             SlashCommand::Plugins => "browse plugins",
             SlashCommand::Logout => "log out of DuckHive",
-            SlashCommand::Provider => "manage AI providers and select models",
+            SlashCommand::Provider => "show detailed provider configuration and model info",
             SlashCommand::Rollout => "print the rollout file path",
             SlashCommand::TestApproval => "test approval request",
         }
